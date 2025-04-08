@@ -2,13 +2,51 @@
 <script src="/link-fixup.js" defer></script>
 <title>404 Not Found</title>
 <style>
- body.loading div.failed, body.failed div.loading, div.failed { display: none; }
- body.loading div.loading, body.failed div.failed, div.loading { display: block; }
+    body {
+        background-color: rgb(107, 107, 245);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* ← tu peux changer ça */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    h1 {
+        color: rgb(132, 189, 250);
+    }
+
+    p {
+        color: white;
+        max-width: 600px;
+    }
+
+    div {
+        margin: 10px 0;
+    }
+
+    body.loading div.failed, 
+    body.failed div.loading, 
+    div.failed {
+        display: none;
+    }
+
+    body.loading div.loading, 
+    body.failed div.failed, 
+    div.loading {
+        display: block;
+    }
 </style>
 <body onload="document.body.className = 'failed'">
 <script>document.body.className = 'loading'</script>
 <div class="loading">
  <p>Loading...</p>
+</div>
+<div>
+    <img src="images/404.png" alt="Erreur 404" style="width: 300px;">
 </div>
 <div class="failed">
  <h1>Not Found</h1>
